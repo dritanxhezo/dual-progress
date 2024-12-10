@@ -1,0 +1,126 @@
+/* * { font: inherit } */
+[role='group'],
+[for],
+[id='ruler'] {
+  display: grid;
+}
+/* html { min-height: 100% } */
+/* body { background: #ededed } */
+
+[role='group'] {
+  grid-gap: 0.5em;
+  place-self: center;
+  container-type: inline-size;
+  margin: 0 auto;
+  width: Min(40em, 100%);
+  color: #323232;
+  font: 200 1em roboto, sans-serif;
+
+  &::before,
+  progress {
+    grid-area: 3/ 1;
+    border-radius: 5px;
+  }
+
+  &::before {
+    background: repeating-linear-gradient(
+      -45deg,
+      #dadada 0 0.375em,
+      #0000 0 0.75em
+    );
+    content: '';
+  }
+}
+
+[id='group-label'] {
+  grid-area: 2/ 1;
+}
+
+/* :is([for], progress):nth-of-type(1) { --v: var(--v0) }
+:is([for], progress):nth-of-type(2) { --v: var(--v1) } */
+
+[for] {
+  justify-self: start;
+  /* translate: calc(var(--v)*1cqi - 50%) */
+}
+
+label {
+  grid-area: 1/ 1 / span 3;
+  grid-template-rows: subgrid;
+  justify-items: center;
+  color: #0000;
+  pointer-events: none;
+
+  span {
+    grid-area: 1/ 1;
+    width: 2em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  &::before {
+    grid-row: 2 / span 2;
+    width: 6px;
+    background: radial-gradient(3px at 50% 3px, currentcolor 2px, #0000),
+      linear-gradient(#0000 3px, currentcolor 0) 50%/ 2px no-repeat;
+    color: #bfbfbf;
+    content: '';
+  }
+
+  &::after {
+    grid-area: 1/ 1;
+    align-self: center;
+    background: #616161 text;
+    content: attr(data-ico);
+  }
+}
+
+progress {
+  --bg: #d0cce5;
+  overflow: hidden;
+  width: 100%;
+  background: none;
+
+  &::-webkit-progress-bar {
+    background: none;
+  }
+  &::-webkit-progress-value {
+    background: var(--bg);
+  }
+  &::-moz-progress-bar {
+    background: var(--bg);
+  }
+
+  &:nth-of-type(2) {
+    --bg: #aca7c9;
+  }
+}
+
+output,
+[id='ruler'] {
+  grid-area: 4/ 1;
+}
+
+output {
+  grid-auto-flow: column;
+
+  &::after {
+    color: #c7c7c7;
+    content: attr(data-suf);
+  }
+}
+
+[id='ruler'] {
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+  color: #bebebe;
+}
+
+[role='group']:not(:hover) {
+  label,
+  output,
+  [id='ruler'] {
+    display: none;
+  }
+}

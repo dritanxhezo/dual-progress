@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="double-axis.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/page2.html">Other page</a>
+    </nav>
+    <main>
+      <div
+        role="group"
+        aria-labelledby="group-label"
+        <!--
+        style="--v0: 55; --v1: 25"
+        --
+      >
+        <div id="group-label">Total progress</div>
+
+        <label for="prog0" data-ico="🏷️" style="translate: calc(55 * 1cqi - 50%)"><span>one</span></label>
+        <progress id="prog0" value="55" max="100" list="ruler"></progress>
+        <output for="prog0" data-suf="%" style="translate: calc(55 * 1cqi - 50%)">55</output>
+
+        <label
+          for="prog1"
+          data-ico="🚀"
+          style="translate: calc(25 * 1cqi - 50%)"
+          ><span>two</span></label
+        >
+        <progress id="prog1" value="25" max="100" list="ruler"></progress>
+        <output
+          for="prog1"
+          data-suf="%"
+          style="translate: calc(25 * 1cqi - 50%)"
+          >25</output
+        >
+
+        <datalist id="ruler">
+          <option value="0" label="0%"></option>
+          <option value="100" label="100%"></option>
+        </datalist>
+      </div>
+    </main>
+  </body>
+</html>
