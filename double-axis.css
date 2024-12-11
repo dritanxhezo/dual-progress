@@ -12,9 +12,9 @@
   place-self: center;
   container-type: inline-size;
   margin: 0 auto;
-  width: Min(40em, 100%);
+  width: Min(20em, 100%);
   color: #323232;
-  font: 200 1em roboto, sans-serif;
+  font: 200 .8em roboto, sans-serif;
 
   &::before,
   progress {
@@ -41,7 +41,6 @@
 
 [for] {
   justify-self: start;
-  /* translate: calc(var(--v)*1cqi - 50%) */
 }
 
 label {
