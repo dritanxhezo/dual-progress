@@ -4,8 +4,6 @@
 [id='ruler'] {
   display: grid;
 }
-/* html { min-height: 100% } */
-/* body { background: #ededed } */
 
 [role='group'] {
   grid-gap: 0.5em;
@@ -14,7 +12,7 @@
   margin: 0 auto;
   width: Min(20em, 100%);
   color: #323232;
-  font: 200 .8em roboto, sans-serif;
+  font: 200 .7em roboto, sans-serif;
 
   &::before,
   progress {
@@ -36,26 +34,29 @@
   grid-area: 2/ 1;
 }
 
-/* :is([for], progress):nth-of-type(1) { --v: var(--v0) }
-:is([for], progress):nth-of-type(2) { --v: var(--v1) } */
-
 [for] {
   justify-self: start;
+  translate: calc(var(--v)*1cqi - 50%);
 }
 
 label {
   grid-area: 1/ 1 / span 3;
   grid-template-rows: subgrid;
   justify-items: center;
-  color: #0000;
+  /* color: #0000; */
   pointer-events: none;
 
   span {
     grid-area: 1/ 1;
-    width: 2em;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: #fff;
+    /* width: 2em; */
+    /* aspect-ratio: 1; */
+    border-radius: 20%;
+    background: #7e7d7d;
+    color: whitesmoke;
+    margin-bottom: -5px;
+    text-align: center;
+    padding:1px;
+    /* margin:auto; */
   }
 
   &::before {
@@ -70,8 +71,9 @@ label {
   &::after {
     grid-area: 1/ 1;
     align-self: center;
+    margin-bottom: -15px;
     background: #616161 text;
-    content: attr(data-ico);
+    /* content: attr(data-ico); */
   }
 }
 
@@ -91,9 +93,6 @@ progress {
     background: var(--bg);
   }
 
-  &:nth-of-type(2) {
-    --bg: #aca7c9;
-  }
 }
 
 output,

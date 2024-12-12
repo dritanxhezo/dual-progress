@@ -21,19 +21,20 @@
       <div
         role="group"
         aria-labelledby="group-label"
-        <!--
-        style="--v0: 55; --v1: 25"
-        --
       >
-        <div id="group-label">Total progress</div>
+        <!-- <div id="group-label">Total progress</div> -->
 
-        <label for="prog0" data-ico="🏷️" style="translate: calc(55 * 1cqi - 50%)"><span>one</span></label>
-        <progress id="prog0" value="55" max="100" list="ruler"></progress>
-        <output for="prog0" data-suf="%" style="translate: calc(55 * 1cqi - 50%)">55</output>
+        <progress id="prog2" value="65" max="100" list="ruler" style="--bg: #cde0cf;"></progress>
+        <output for="prog2" data-suf="%" style="--v: 65">65</output>
 
-        <label for="prog1" data-ico="🚀" style="translate: calc(25 * 1cqi - 50%)"><span>two</span></label>
-        <progress id="prog1" value="25" max="100" list="ruler"></progress>
-        <output for="prog1" data-suf="%" style="translate: calc(25 * 1cqi - 50%)">25</output>
+        <label for="prog0" data-ico="🏷️" style="--v: 50"><span>DEV</span></label>
+        <progress id="prog0" value="50" max="100" list="ruler" style="--bg: #abceae;"></progress>
+        <output for="prog0" data-suf="%" style="--v: 50">50</output>
+
+        <label for="prog1" data-ico="🚀" style="--v: 25"><span>QA</span></label>
+        <progress id="prog1" value="25" max="100" list="ruler" style="--bg: #74b678;"></progress>
+        <output for="prog1" data-suf="%" style="--v: 25">25</output>
+
 
         <datalist id="ruler">
           <option value="0" label="0%"></option>
